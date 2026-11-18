@@ -1,0 +1,83 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_analytic_responsible
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: account_analytic_responsible
+#: model:ir.model.fields,field_description:account_analytic_responsible.field_account_analytic_line__analytic_responsible_id
+#: model_terms:ir.ui.view,arch_db:account_analytic_responsible.view_account_analytic_line_filter
+msgid "Account Responsible"
+msgstr "Responsable de la cuenta"
+
+#. module: account_analytic_responsible
+#: model:ir.model,name:account_analytic_responsible.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "Cuenta analítica"
+
+#. module: account_analytic_responsible
+#: model:ir.model,name:account_analytic_responsible.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Línea analítica"
+
+#. module: account_analytic_responsible
+#: model:ir.actions.server,name:account_analytic_responsible.automation_from_project_ir_actions_server
+msgid "Analytic account responsible: copy project manager"
+msgstr "Responsable de cuenta analítica: copiar responsable del proyecto"
+
+#. module: account_analytic_responsible
+#: model:ir.actions.server,name:account_analytic_responsible.automation_from_sale_order_ir_actions_server
+msgid "Analytic account responsible: copy salesperson of confirmed order"
+msgstr "Responsable de cuenta analítica: copiar comercial del pedido confirmado"
+
+#. module: account_analytic_responsible
+#: model:ir.model.fields,help:account_analytic_responsible.field_account_analytic_account__responsible_manual
+msgid ""
+"Checked automatically when the responsible is changed by hand. While it is "
+"checked, the automated actions of this module do not change the responsible."
+" Uncheck it to give control back to them."
+msgstr "Se marca sola cuando se cambia el responsable a mano. Mientras esté marcada, las acciones automáticas de este módulo no cambian el responsable. Desmárquela para devolverles el control."
+
+#. module: account_analytic_responsible
+#: model_terms:ir.ui.view,arch_db:account_analytic_responsible.view_account_analytic_line_filter
+msgid "From My Analytic Accounts"
+msgstr "De mis cuentas analíticas"
+
+#. module: account_analytic_responsible
+#: model_terms:ir.ui.view,arch_db:account_analytic_responsible.view_account_analytic_account_search
+msgid "My Analytic Accounts"
+msgstr "Mis cuentas analíticas"
+
+#. module: account_analytic_responsible
+#: model:ir.model.fields,help:account_analytic_responsible.field_account_analytic_account__responsible_id
+#: model:ir.model.fields,help:account_analytic_responsible.field_account_analytic_line__analytic_responsible_id
+msgid ""
+"Person responsible for this analytic account. It is copied to its analytic "
+"items so that they can be grouped by responsible."
+msgstr "Persona responsable de esta cuenta analítica. Se copia a sus apuntes analíticos para poder agruparlos por responsable."
+
+#. module: account_analytic_responsible
+#: model:ir.model.fields,field_description:account_analytic_responsible.field_account_analytic_account__responsible_id
+#: model_terms:ir.ui.view,arch_db:account_analytic_responsible.view_account_analytic_account_search
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: account_analytic_responsible
+#: model:ir.model.fields,field_description:account_analytic_responsible.field_account_analytic_account__responsible_manual
+msgid "Set Manually"
+msgstr "Fijado a mano"
+
+#. module: account_analytic_responsible
+#: model_terms:ir.ui.view,arch_db:account_analytic_responsible.view_account_analytic_account_search
+msgid "Without Responsible"
+msgstr "Sin responsable"

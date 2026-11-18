@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_account_analytic_line_tree" model="ir.ui.view">
+        <field name="name">account.analytic.line.tree.responsible</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_line_tree"/>
+        <field name="arch" type="xml">
+            <field name="account_id" position="after">
+                <field name="analytic_responsible_id" optional="hide" widget="many2one_avatar_user"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_account_analytic_line_filter" model="ir.ui.view">
+        <field name="name">account.analytic.line.select.responsible</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_line_filter"/>
+        <field name="arch" type="xml">
+            <field name="account_id" position="after">
+                <field name="analytic_responsible_id"/>
+            </field>
+            <filter name="date" position="after">
+                <separator/>
+                <filter string="From My Analytic Accounts" name="my_analytic_accounts"
+                        domain="[('analytic_responsible_id', '=', uid)]"/>
+                <separator/>
+            </filter>
+            <filter name="group_by_analytic_plan" position="after">
+                <filter string="Account Responsible" name="group_by_analytic_responsible"
+                        context="{'group_by': 'analytic_responsible_id'}"/>
+            </filter>
+        </field>
+    </record>
+
+</odoo>

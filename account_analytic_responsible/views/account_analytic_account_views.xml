@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_account_analytic_account_form" model="ir.ui.view">
+        <field name="name">account.analytic.account.form.responsible</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="responsible_id" options="{'no_create': True}"/>
+                <field name="responsible_manual"
+                       attrs="{'invisible': [('responsible_id', '=', False)]}"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_account_analytic_account_list" model="ir.ui.view">
+        <field name="name">account.analytic.account.list.responsible</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_account_list"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="responsible_id" optional="show" widget="many2one_avatar_user"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_account_analytic_account_search" model="ir.ui.view">
+        <field name="name">account.analytic.account.search.responsible</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_account_search"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="responsible_id"/>
+            </field>
+            <filter name="inactive" position="before">
+                <filter string="My Analytic Accounts" name="my_accounts"
+                        domain="[('responsible_id', '=', uid)]"/>
+                <filter string="Without Responsible" name="no_responsible"
+                        domain="[('responsible_id', '=', False)]"/>
+                <separator/>
+            </filter>
+            <filter name="associatedpartner" position="after">
+                <filter string="Responsible" name="group_by_responsible"
+                        context="{'group_by': 'responsible_id'}"/>
+            </filter>
+        </field>
+    </record>
+
+</odoo>
